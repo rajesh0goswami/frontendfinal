@@ -1,0 +1,124 @@
+<div class="bg-img">
+    <div class="container">
+        <div class="topnav">
+            <a href="#home">Home</a>
+            <a href="#news">News</a>
+            <a [routerLink]="['/contact']">Contact</a>
+            <a [routerLink]="['/about']">About</a>
+            <a [routerLink]="['/login']" *ngIf="!isLoggedIn" (click)="change()">Login</a>
+            <a [routerLink]="['/register']" *ngIf="!isLoggedIn">Sign Up</a>
+            <a [routerLink]="['/register']" *ngIf="isLoggedIn" (click)="onLogOut()">Log out</a>
+            <li class="nav-item" *ngIf="isLoggedIn">
+                <a class="nav-link">Hi-{{userName}}</a>
+            </li>
+        </div>
+    </div>
+    <div class="row">
+        <div style="padding-left: 70%;padding-top: 10px;color: aliceblue;">
+            <h1>Dream Screens</h1>
+            <h5>@Bhubaneswar</h5>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="dropdown" style="padding-left: 70%;">
+            <button class="dropbtn">Select locality</button>
+            <div class="dropdown-content">
+                <a href="#" (click)="patia()">Patia</a>
+                <a href="#" (click)="crp()">CRP</a>
+                <a href="#" (click)="saheed()">Saheed Nagar</a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+
+
+
+</div>
+
+<div id="rw1" class="row-sm">
+    <form action="">
+        <input id="movie" type="text" name="movie_name" [(ngModel)]="movie_name" placeholder="Search for movies">
+        <button id="bt" type="submit" class="btn btn-dark" (click)="SearchMovie()">Search</button>
+    </form>
+    <div class="alert alert-dark" role="alert" *ngIf="notfound">
+        no such movie in database
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    <div *ngIf="isLoggedIn">
+        <h4>Recommended for you</h4>
+        <app-recommendation></app-recommendation>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col" *ngFor="let movie of movies">
+        <div class="card" style="width: 18rem; ">
+            <img src="{{movie.imglink}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{movie.moviename}}</h5>
+                <p class="card-text">{{movie.description}}</p>
+                <p class="card-text">Rs. {{movie.price}}</p>
+                <a href="#" [routerLink]="['/movie',movie.id]" *ngIf="isLoggedIn" class="btn btn-primary">Book now</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- <div>
+    <main class="page-content">
+        <div class="d_card" *ngFor="let movie of movies">
+            <div class="content">
+                <h2 class="heading">{{movie.moviename}}</h2>
+                <p class="data-content">{{movie.description}} </p>
+            </div>
+        </div>
+
+    </main>
+</div> -->
+
+<div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
+    <footer>
+        <div class="row my-5 justify-content-center py-5">
+            <div class="col-11">
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                        <h3 class="text-muted mb-md-0 mb-5 bold-text">Dream Screens</h3>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 bold-text "><b>4K ULTRA HD VISUALS</b></h6>
+                        <ul class="list-unstyled">
+                            <li>PERFECT LIGHTING LEVELS</li>
+                            <li>THEMED DÉCOR</li>
+                            <li>STELLAR SURROUND SOUND</li>
+                            <li>Central Control System</li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                        <p class="mb-1">605, RATAN ICON BUILDING</p>
+                        <p>SEAWOODS SECTOR</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span>                            <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Dream Screens All Rights Reserved.</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                        <h6 class="mt-55 mt-2 text-muted bold-text"><b>Rajesh Goswami</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span> rajeshgoswami.das07@gmail.com</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                        <h6 class="text-muted bold-text"><b>RISHABH SHEKHAR</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> rishab@gmail.com</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>

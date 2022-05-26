@@ -1,0 +1,35 @@
+<!-- <div class="row">
+    <div class="col">
+        <img src="{{imglink}}" alt="">
+        <h2>Rs.{{price}}</h2>
+    </div>
+    <a href="{{trailerlink}}"></a>
+    <div class="col">
+        <p></p>
+        <button type="button" class="btn btn-info" [routerLink]="['/booking',id]">Book Ticket</button>
+    </div>
+    <a class="nav-link">Hi-{{userName}}</a>
+
+</div> -->
+
+<a class="nav-link" style="float: right; position: relative; right: 20px;">Hi-{{userName}}</a>
+<section>
+
+    <div class="row">
+        <div class="image">
+            <img src="{{imglink}}" style="border-radius: 10px;" alt="">
+        </div>
+
+        <form action="">
+            <h1>UDAAN</h1>
+            <a href="{{trailerlink}}">watch trailer</a>
+            <p>{{description}}</p>
+        </form>
+
+    </div>
+    <div class="row">
+        <h2 style="font-size: 20px; position: relative; top: 5px; left: 5px;">Rs.{{price}}</h2>
+        <button type="button" class="btn btn-info" [routerLink]="['/booking',id]" style="position: relative; left: 150px;">Book Ticket</button>
+    </div>
+
+</section>

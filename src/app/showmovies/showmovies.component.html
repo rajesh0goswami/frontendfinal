@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col" *ngFor="let movie of movies">
+        <div class="card" style="width: 18rem;">
+            <img src="{{movie.imglink}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{movie.moviename}}</h5>
+                <p class="card-text">{{movie.description}}</p>
+                <p class="card-text">Rs. {{movie.price}}</p>
+                <hr>
+                <button class="btn btn-warning" id="btn1" [routerLink]="['/edit',movie.id]">Update</button>
+                <button class="btn btn-danger" id="btn2" (click)="onDelete(movie)" style="margin-left: 12%;">Delete </button>
+                <button type="button" class="btn btn-primary" [routerLink]="['/details',movie.id]" style="margin-top: 10px;">Show Booking Details</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,17 @@
+<!-- <button type="button" (click)="downloadPDF()">Download ticket</button> -->
+<div id="ticket" style="background-image: url('assets/ticketback.PNG'); width: 61%; margin-left: 280px; margin-top: 50px;">
+    <br>
+    <br>
+    <br>
+    <div style="padding-left: 8%;">
+        <qr-code [value]="qrInfo" size="100"></qr-code>
+        <h1 style="  float: right;padding-right: 45%; padding-top: 2%;">{{seatNo}}</h1>
+    </div>
+    <h5 style="padding-left: 35%;"> {{date}}</h5>
+    <h5 style="padding-left: 35%;"> {{bill}}</h5>
+    <h3 style="padding-left: 75%;">{{date}}} {{time}}</h3>
+    <br>
+
+</div>
+
+<button printSectionId="ticket" ngxPrint (click)="downloadPDF()">Download ticket</button>

@@ -1,0 +1,93 @@
+<form>
+    <h2>Enter Movie details</h2>
+    <label>
+      <p class="label-txt">Movie title</p>
+      <input type="email" name="email" class="input" [(ngModel)]="moviename">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">Movie Genre</p>
+      <!-- <input type="email" name="email" class="input" [(ngModel)]="Genre"> -->
+      <select name="cars" id="cars" [(ngModel)]="Genre">
+        <option value="Action">Action</option>
+        <option value="Animation">Animation</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Crime">Crime</option>
+        <option value="Drama">Drama</option>
+        <option value="Experimental">Experimental</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Historical ">Historical </option>
+        <option value="Horror ">Horror </option>
+        <option value="Romance">Romance</option>
+        <option value="Science Fiction">Science Fiction</option>
+        <option value="Thriller ">Thriller </option>
+        <option value="Western ">Western </option>
+      </select>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+
+    <label>
+      <p class="label-txt">Image Link</p>
+      <input type="text" class="input" name="password"[(ngModel)]="imglink" >
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">Trailer Link</p>
+      <input type="text" class="input" name="password"[(ngModel)]="trailerlink" >
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+
+    <label>
+        <p class="label-txt">Description</p>
+        <input type="text" class="input" name="3"[(ngModel)]="description" >
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+
+    <label>
+        <p class="label-txt">Ticket Price</p>
+        <input type="text" class="input" name="4"[(ngModel)]="price" >
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+
+    <label>
+        <p class="label-txt">Show date</p>
+        <input type="text" class="input" name="5"[(ngModel)]="date" >
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+
+    <label>
+        <p class="label-txt">Show Time</p>
+        <input type="text" class="input" name="6"[(ngModel)]="showTime" >
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+
+    <label>
+        <p class="label-txt">Release Date</p>
+        <input type="text" class="input" name="77"[(ngModel)]="releaseDate" >
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+
+
+
+
+    <button type="submit" (click)="addMovie()">Submit</button>
+
+</form>

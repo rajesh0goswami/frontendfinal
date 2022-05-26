@@ -1,0 +1,9 @@
+<h1>welcome admin!!</h1>
+add Movie update movie show movie details like seats booked delete movie
+<button type="button" class="btn btn-primary" (click)="showmovies()">show all movies</button>
+<button type="button" class="btn btn-success" (click)="addmovie()">Add new movie</button>
+<button type="button" class="btn btn-success" (click)="showRevinue()">Revinue updates</button>
+<button type="button" class="btn btn-danger" (click)="onLogOut()">Logout</button>
+<app-showmovies *ngIf="show1"></app-showmovies>
+<app-show-revinue *ngIf="show4"></app-show-revinue>
+<app-addmovie *ngIf="show3"></app-addmovie>
